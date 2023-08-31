@@ -45,7 +45,7 @@ function App() {
 
 <video autoPlay muted loop>
 
- <source src={video} type="video/mp4" />
+  <source src={video} type="video/mp4" />
 
 </video>
 
@@ -54,23 +54,26 @@ function App() {
 
 <div className='container'>
      <form onSubmit={finalSearch}>
-         <input  className='search' placeholder='search' onChange={myRecipeSearch} value={mySearch}/>
+         <input  className='search' placeholder='search...' onChange={myRecipeSearch} value={mySearch}/>
     </form>
-</div>
+{/* </div>
 
-<div className='container'>
+<div className='container'> */}
      <button onClick={finalSearch}>
          <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon"/>
       </button>
 </div>
+<div className='main'>
 {myRecipes.map( (element, index ) => (
   <MyRecipesComponent key = {index}
   label = {element.recipe.label}  
   image = {element.recipe.image} 
   calories = {element.recipe.calories} 
-  ingredients = {element.recipe.ingredientLines}/>
+  url = { element.recipe.url}
+  ingredients = {element.recipe.ingredientLines}
+  totalWeight = { element.recipe.totalWeight}/>
 ))}
-
+</div>
 </div>
     
   );

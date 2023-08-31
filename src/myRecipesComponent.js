@@ -1,11 +1,15 @@
 
-function MyRecipesComponent({label, image, calories, ingredients}){
+function MyRecipesComponent({label, image, calories, ingredients, url, totalWeight}){
   
     return(
-        <div >
+        <div className="total" >
             
             <div className="container ">
                 <h2>{label}</h2>
+            </div>
+            <div className="container ">
+                <p>{calories.toFixed()} calories. </p>
+                <p>{totalWeight.toFixed()} gramm</p>
             </div>
             <div className="container ">
                 <img src={image}/>
@@ -18,8 +22,9 @@ function MyRecipesComponent({label, image, calories, ingredients}){
                     </li>
                 ))}
             </ul>
+           
             <div className="container ">
-                <p>{calories.toFixed()} calories.</p>
+                <a  className="url" href={url}>Instructions</a>
             </div>
           
 
