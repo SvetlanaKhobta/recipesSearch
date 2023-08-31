@@ -29,12 +29,13 @@ function App() {
   const myRecipeSearch = (e) => {
   
    setMySearch(e.target.value)
-   setWordSubmitted(mySearch);
+  
    
   }
 
   const finalSearch = (e) => {
     e.preventDefault()
+    setWordSubmitted(mySearch);
   }
   
   return (
@@ -56,9 +57,7 @@ function App() {
      <form onSubmit={finalSearch}>
          <input  className='search' placeholder='search...' onChange={myRecipeSearch} value={mySearch}/>
     </form>
-{/* </div>
 
-<div className='container'> */}
      <button onClick={finalSearch}>
          <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon"/>
       </button>
