@@ -12,13 +12,13 @@ function MyRecipesComponent({label, image, calories, ingredients, url, totalWeig
                 <p>{totalWeight.toFixed()} gramm</p>
             </div>
             <div className="container ">
-                <img src={image}/>
+                <img className="food"  src={image}/>
             </div>
             <ul className="container list">
                 {ingredients.map((ingredient, index) => (
                     <li key = {index}>
                     <img className="chek" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-check-multimedia-kiranshastry-gradient-kiranshastry.png " alt="icon"/>
-                    {ingredient}
+                {ingredient}
                     </li>
                 ))}
             </ul>
